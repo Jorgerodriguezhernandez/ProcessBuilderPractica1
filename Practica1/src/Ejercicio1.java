@@ -9,5 +9,13 @@ import java.util.Scanner;
             String path = "C:\\Program Files\\Google\\Chrome\\Application\\";
             Process p = null;
 
+            try {
+                for (int i = 0; i<NumEscrito; i++) {
+                    p = Runtime.getRuntime().exec(path + "chrome.exe");
+                }
+                p.waitFor();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
