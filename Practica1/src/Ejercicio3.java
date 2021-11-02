@@ -16,8 +16,8 @@ public class Ejercicio3 {
             } else {
                 try {
                     ProcessBuilder[] Constructor = {
-                            new ProcessBuilder("get-content", ruta),
-                            new ProcessBuilder("svn status -q | find /c /v "+(char)34),};
+                            new ProcessBuilder("type", ruta),
+                            new ProcessBuilder("type"+ ruta +" | Measure-Object -line"+(char)34),};
                     List<Process> ArrProcess = ProcessBuilder.startPipeline(Arrays.asList(Constructor));
                     Process last = ArrProcess.get(ArrProcess.size() - 1);
                     BufferedReader reader = new BufferedReader(new InputStreamReader(last.getInputStream()));
